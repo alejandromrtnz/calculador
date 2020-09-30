@@ -1,19 +1,54 @@
-//
-//  ViewController.swift
-//  Calculadora
-//
-//  Created by Apps2t on 25/09/2020.
-//  Copyright © 2020 Apps2t. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CalculadoraProtocol {
 
+    
+    @IBOutlet weak var displayLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
+    
+    @IBAction func numberTouched (sender: UIButton) {
+        
+        switch sender.accessibilityLabel {
+        case "numberOne":
+            displayLabel.text = "1"
+            break
+        case "numberTwo":
+            displayLabel.text = "2"
+            break
+        case "numberThree":
+            displayLabel.text = "3"
+            break
+        case "numberFour":
+            displayLabel.text = "4"
+            break
+        case "numberFive":
+            displayLabel.text = "5"
+            break
+        case "numberSix":
+            displayLabel.text = "6"
+            break
+        case "numberSevem":
+            displayLabel.text = "7"
+            break
+        case "numberEight":
+            displayLabel.text = "8"
+            break
+        case "numberNine":
+            displayLabel.text = "9"
+            break
+        case "numberZero":
+            displayLabel.text = "0"
+            break
+        default:
+            break
+        }
+    }
+    
 
      func suma (num1: Int, num2: Int)-> Int {
             var resultado = num1 + num2
@@ -49,6 +84,8 @@ class ViewController: UIViewController {
     }
 
     protocol CalculadoraProtocol {
+        
+    
         
         func suma (num1: Int, num2: Int) -> Int
         func resta (num1: Int, num2: Int) -> Int
